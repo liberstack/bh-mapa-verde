@@ -1,0 +1,90 @@
+[
+  {
+    "name": "Parque Municipal Américo Renné Giannetti",
+    "region": "Centro-Sul",
+    "address": "Av. Afonso Pena, 1377 — Centro",
+    "hours": "Qui a sáb, 7h–21h · Dom a ter, 7h–17h",
+    "area_m2": 193000,
+    "lat": -19.9227,
+    "lng": -43.9345,
+    "features": ["banheiro", "playground", "trilha", "acessibilidade"],
+    "note": "O parque mais antigo de BH, inaugurado em 1897 junto com a própria capital. Projeto paisagístico de Paul Villon, com lagos, coreto e o Orquidário Municipal."
+  },
+  {
+    "name": "Parque das Mangabeiras",
+    "region": "Centro-Sul",
+    "address": "Av. José do Patrocínio Pontes, 1000 — Mangabeiras",
+    "hours": "Ter a dom, 8h–17h",
+    "area_m2": 2400000,
+    "lat": -19.9522,
+    "lng": -43.9026,
+    "features": ["banheiro", "estacionamento", "trilha", "playground", "quadra"],
+    "note": "Maior parque municipal de BH, projetado por Roberto Burle Marx na encosta da Serra do Curral. Tem mirante com vista panorâmica da cidade."
+  },
+  {
+    "name": "Parque Municipal Juscelino Kubitschek (JK)",
+    "region": "Centro-Sul",
+    "address": "Av. dos Bandeirantes, 222 — Sion",
+    "hours": "Diariamente, 24h",
+    "area_m2": null,
+    "lat": -19.9494,
+    "lng": -43.9298,
+    "features": ["banheiro", "playground", "trilha"],
+    "note": "Antigo Parque do Acaba Mundo. Um dos poucos parques de BH aberto 24h, bastante usado por moradores da região do Sion/Comiteco."
+  },
+  {
+    "name": "Parque Mata das Borboletas",
+    "region": "Centro-Sul",
+    "address": "Bairro Sion, encosta da Serra do Curral",
+    "hours": "Ter a dom, 8h–17h",
+    "area_m2": 35500,
+    "lat": -19.9508,
+    "lng": -43.9202,
+    "features": ["trilha", "playground"],
+    "note": "Criado em 1995, tem duas nascentes que abastecem o Córrego Acaba-Mundo e alta concentração de borboletas nativas do cerrado."
+  },
+  {
+    "name": "Parque Municipal Fazenda Lagoa do Nado",
+    "region": "Norte",
+    "address": "Região Norte de Belo Horizonte",
+    "hours": "Qui a dom, 8h–17h",
+    "area_m2": 331000,
+    "lat": -19.8565,
+    "lng": -43.9581,
+    "features": ["banheiro", "estacionamento", "trilha", "quadra", "biblioteca"],
+    "note": "Vegetação com 75% de espécies nativas do Cerrado ao redor de uma grande lagoa. Abriga mico-estrela, gambá e tatu, além de cágados e peixes na lagoa."
+  },
+  {
+    "name": "Parque Ecológico da Pampulha (Francisco Lins do Rego)",
+    "region": "Pampulha",
+    "address": "Próximo à Lagoa da Pampulha",
+    "hours": "Ter a dom, 8h–17h",
+    "area_m2": null,
+    "lat": -19.8620,
+    "lng": -43.9696,
+    "features": ["trilha", "ciclovia próxima", "playground"],
+    "note": "Fica junto ao conjunto arquitetônico da Pampulha, tombado pela UNESCO, próximo à orla da lagoa."
+  },
+  {
+    "name": "Parque Ecológico Vila Pinho (Carlos de Faria Tavares)",
+    "region": "Barreiro",
+    "address": "Regional Barreiro",
+    "hours": "Ter a dom, 8h–17h",
+    "area_m2": null,
+    "lat": -19.9765,
+    "lng": -44.0294,
+    "features": ["trilha", "playground"],
+    "note": "Uma das principais áreas verdes da regional Barreiro, na zona oeste da cidade."
+  },
+  {
+    "name": "Parque Municipal Coqueiros",
+    "region": "Noroeste",
+    "address": "Rua Eneida — Bairro Coqueiros",
+    "hours": "Ter a dom, 8h–17h",
+    "area_m2": 13600,
+    "lat": -19.8933,
+    "lng": -43.9822,
+    "features": ["banheiro", "playground"],
+    "note": "Criado em dezembro de 2025 a partir do antigo Centro de Vivência Agroecológica (Cevae) do bairro, após pedido da comunidade local."
+  }
+]

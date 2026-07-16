@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PARQUES BH — Atlas Verde de Belo Horizonte</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Barlow+Condensed:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="header__mark">
+      <svg viewBox="0 0 40 40" class="header__glyph" aria-hidden="true">
+        <path d="M20 4 C12 4 6 12 6 18 C6 26 20 36 20 36 C20 36 34 26 34 18 C34 12 28 4 20 4 Z" fill="none"
+          stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" />
+        <circle cx="20" cy="18" r="5" fill="none" stroke="currentColor" stroke-width="1.6" />
+      </svg>
+    </div>
+    <div class="header__title">
+      <h1>PARQUES BH</h1>
+      <span class="header__sub">Atlas verde — áreas de lazer &amp; conservação de Belo Horizonte</span>
+    </div>
+    <div class="header__meta">
+      <span id="clock" class="mono"></span>
+    </div>
+  </header>
+
+  <main class="layout">
+
+    <section class="map-wrap">
+      <div id="map"></div>
+    </section>
+
+    <aside class="panel">
+
+      <div class="filter-bar" id="filterBar"></div>
+
+      <div class="detail" id="detail">
+        <p class="detail__placeholder">Selecione um parque na lista ou clique num marcador no mapa.</p>
+      </div>
+
+      <div class="park-list">
+        <h2 class="park-list__title">PARQUES CATALOGADOS <span class="mono" id="parkCount"></span></h2>
+        <ul id="parkList" class="park-list__items"></ul>
+      </div>
+
+    </aside>
+
+  </main>
+
+  <footer class="footer mono">
+    <span>Tiles: OpenStreetMap contributors — Dados: Fundação de Parques e Zoobotânica (PBH)</span>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
