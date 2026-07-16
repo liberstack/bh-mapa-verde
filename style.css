@@ -111,12 +111,12 @@ body {
 }
 
 .park-marker {
-  color: var(--leaf);
+  color: orange;
   filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.6));
 }
 
 .park-marker.is-active {
-  color: var(--snow);
+  color: greenyellow;
 }
 
 /* ---------- Side panel ---------- */

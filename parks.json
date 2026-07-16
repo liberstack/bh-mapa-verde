@@ -7,7 +7,12 @@
     "area_m2": 193000,
     "lat": -19.9227,
     "lng": -43.9345,
-    "features": ["banheiro", "playground", "trilha", "acessibilidade"],
+    "features": [
+      "banheiro",
+      "playground",
+      "trilha",
+      "acessibilidade"
+    ],
     "note": "O parque mais antigo de BH, inaugurado em 1897 junto com a própria capital. Projeto paisagístico de Paul Villon, com lagos, coreto e o Orquidário Municipal."
   },
   {
@@ -18,7 +23,13 @@
     "area_m2": 2400000,
     "lat": -19.9522,
     "lng": -43.9026,
-    "features": ["banheiro", "estacionamento", "trilha", "playground", "quadra"],
+    "features": [
+      "banheiro",
+      "estacionamento",
+      "trilha",
+      "playground",
+      "quadra"
+    ],
     "note": "Maior parque municipal de BH, projetado por Roberto Burle Marx na encosta da Serra do Curral. Tem mirante com vista panorâmica da cidade."
   },
   {
@@ -29,7 +40,11 @@
     "area_m2": null,
     "lat": -19.9494,
     "lng": -43.9298,
-    "features": ["banheiro", "playground", "trilha"],
+    "features": [
+      "banheiro",
+      "playground",
+      "trilha"
+    ],
     "note": "Antigo Parque do Acaba Mundo. Um dos poucos parques de BH aberto 24h, bastante usado por moradores da região do Sion/Comiteco."
   },
   {
@@ -40,7 +55,10 @@
     "area_m2": 35500,
     "lat": -19.9508,
     "lng": -43.9202,
-    "features": ["trilha", "playground"],
+    "features": [
+      "trilha",
+      "playground"
+    ],
     "note": "Criado em 1995, tem duas nascentes que abastecem o Córrego Acaba-Mundo e alta concentração de borboletas nativas do cerrado."
   },
   {
@@ -51,7 +69,13 @@
     "area_m2": 331000,
     "lat": -19.8565,
     "lng": -43.9581,
-    "features": ["banheiro", "estacionamento", "trilha", "quadra", "biblioteca"],
+    "features": [
+      "banheiro",
+      "estacionamento",
+      "trilha",
+      "quadra",
+      "biblioteca"
+    ],
     "note": "Vegetação com 75% de espécies nativas do Cerrado ao redor de uma grande lagoa. Abriga mico-estrela, gambá e tatu, além de cágados e peixes na lagoa."
   },
   {
@@ -62,7 +86,11 @@
     "area_m2": null,
     "lat": -19.8620,
     "lng": -43.9696,
-    "features": ["trilha", "ciclovia próxima", "playground"],
+    "features": [
+      "trilha",
+      "ciclovia próxima",
+      "playground"
+    ],
     "note": "Fica junto ao conjunto arquitetônico da Pampulha, tombado pela UNESCO, próximo à orla da lagoa."
   },
   {
@@ -73,7 +101,10 @@
     "area_m2": null,
     "lat": -19.9765,
     "lng": -44.0294,
-    "features": ["trilha", "playground"],
+    "features": [
+      "trilha",
+      "playground"
+    ],
     "note": "Uma das principais áreas verdes da regional Barreiro, na zona oeste da cidade."
   },
   {
@@ -84,7 +115,58 @@
     "area_m2": 13600,
     "lat": -19.8933,
     "lng": -43.9822,
-    "features": ["banheiro", "playground"],
+    "features": [
+      "banheiro",
+      "playground"
+    ],
     "note": "Criado em dezembro de 2025 a partir do antigo Centro de Vivência Agroecológica (Cevae) do bairro, após pedido da comunidade local."
+  },
+  {
+    "name": "Parque Municipal Jacques Cousteau",
+    "region": "Oeste",
+    "address": "Rua Augusto José dos Santos, 366 — Betânia",
+    "hours": "Diariamente, 6h–21h",
+    "area_m2": 335000,
+    "lat": -19.9398,
+    "lng": -44.0087,
+    "features": [
+      "banheiro",
+      "trilha",
+      "playground",
+      "acessibilidade"
+    ],
+    "note": "Área de preservação com extensa mata nativa, trilhas ecológicas e nascentes. Um dos principais parques da região Oeste de Belo Horizonte."
+  },
+  {
+    "name": "Parque Municipal Ursulina de Andrade Mello",
+    "region": "Pampulha",
+    "address": "Rua Dr. Sylvio Menicucci, 640 — Castelo",
+    "hours": "Diariamente, 7h–18h",
+    "area_m2": 307000,
+    "lat": -19.8654,
+    "lng": -43.9967,
+    "features": [
+      "banheiro",
+      "trilha",
+      "playground",
+      "acessibilidade"
+    ],
+    "note": "Importante reserva de Mata Atlântica urbana, com lago, nascentes, trilhas e áreas para lazer. É um dos maiores parques da regional Pampulha."
+  },
+  {
+    "name": "Parque Ecológico Renato Azeredo",
+    "region": "Nordeste",
+    "address": "Rua Antônio Peregrino Nascimento, 215 — Palmares",
+    "hours": "Ter a dom, 8h–18h",
+    "area_m2": 85500,
+    "lat": -19.8506,
+    "lng": -43.9294,
+    "features": [
+      "banheiro",
+      "quadra",
+      "trilha",
+      "acessibilidade"
+    ],
+    "note": "Criado em 1992 e implantado em 1996, preserva uma área de Cerrado e Mata na Regional Nordeste. Possui trilhas para caminhada, mirantes, quadra poliesportiva e infraestrutura acessível para visitantes."
   }
 ]
