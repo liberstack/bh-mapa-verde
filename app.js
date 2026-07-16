@@ -104,9 +104,16 @@
   function applyFilter(feature) {
     activeFilter = activeFilter === feature ? null : feature;
 
-    document.querySelectorAll(".filter-bar button").forEach((btn) => {
-      btn.classList.toggle("is-active", btn.dataset.feature === activeFilter);
-    });
+    document
+      .querySelectorAll(".filter-bar button[data-feature]")
+      .forEach((btn) => {
+        const isActive = btn.dataset.feature === activeFilter;
+        btn.classList.toggle("is-active", isActive);
+        btn.setAttribute("aria-pressed", String(isActive));
+      });
+
+    const clearBtn = document.querySelector(".filter-bar__clear");
+    if (clearBtn) clearBtn.hidden = !activeFilter;
 
     parks.forEach((park) => {
       const marker = markersByIdx[park.idx];
@@ -128,11 +135,24 @@
 
   function buildFilterBar() {
     const bar = document.getElementById("filterBar");
+
+    const clearBtn = document.createElement("button");
+    clearBtn.type = "button";
+    clearBtn.className = "filter-bar__clear";
+    clearBtn.textContent = "✕ Limpar filtro";
+    clearBtn.hidden = true;
+    clearBtn.addEventListener("click", () => {
+      if (activeFilter) applyFilter(activeFilter);
+    });
+    bar.appendChild(clearBtn);
+
     const allFeatures = [...new Set(parks.flatMap((p) => p.features))];
     allFeatures.forEach((f) => {
       const btn = document.createElement("button");
+      btn.type = "button";
       btn.dataset.feature = f;
       btn.textContent = FEATURE_LABELS[f] || f;
+      btn.setAttribute("aria-pressed", "false");
       btn.addEventListener("click", () => applyFilter(f));
       bar.appendChild(btn);
     });

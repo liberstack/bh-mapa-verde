@@ -10,18 +10,24 @@
   --earth: #a68a5b;
   --snow: #ecf3e4;
 
-  --font-display: "Barlow Condensed", sans-serif;
-  --font-mono: "Space Mono", monospace;
+  --font-display: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, "Cascadia Mono", "Segoe UI Mono", "SFMono-Regular", Consolas,
+    "Liberation Mono", Menlo, monospace;
 }
 
 * {
   box-sizing: border-box;
 }
 
-html,
+html {
+  height: 100%;
+}
+
 body {
   margin: 0;
-  height: 100%;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
   background: var(--bg);
   color: var(--paper);
   font-family: var(--font-display);
@@ -34,6 +40,7 @@ body {
 /* ---------- Header ---------- */
 
 .header {
+  flex: 0 0 auto;
   display: flex;
   align-items: center;
   gap: 14px;
@@ -56,9 +63,9 @@ body {
 
 .header__title h1 {
   margin: 0;
-  font-size: 22px;
+  font-size: 19px;
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.04em;
   color: var(--snow);
 }
 
@@ -78,16 +85,16 @@ body {
 /* ---------- Layout ---------- */
 
 .layout {
+  flex: 1 1 auto;
+  min-height: 0;
   display: grid;
   grid-template-columns: 1fr 360px;
-  height: calc(100vh - 84px);
 }
 
 @media (max-width: 860px) {
   .layout {
     grid-template-columns: 1fr;
     grid-template-rows: 55vh 1fr;
-    height: auto;
   }
 }
 
@@ -149,6 +156,16 @@ body {
   border-color: var(--leaf);
 }
 
+.filter-bar__clear {
+  color: var(--earth) !important;
+  border-color: var(--earth) !important;
+}
+
+.filter-bar__clear:hover {
+  background: var(--earth) !important;
+  color: var(--bg) !important;
+}
+
 /* Detail card */
 
 .detail {
@@ -175,7 +192,7 @@ body {
 .detail__region {
   font-size: 12px;
   color: var(--leaf);
-  letter-spacing: 0.08em;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
 }
 
@@ -195,7 +212,7 @@ body {
 .detail__stats span:first-child {
   color: var(--paper-dim);
   font-size: 9px;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.05em;
 }
 
 .detail__address {
@@ -246,7 +263,7 @@ body {
 
 .park-list__title {
   font-size: 12px;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.04em;
   color: var(--paper-dim);
   margin: 0 0 8px;
   display: flex;
@@ -292,6 +309,7 @@ body {
 /* Footer */
 
 .footer {
+  flex: 0 0 auto;
   padding: 6px 20px;
   background: var(--bg-panel);
   border-top: 1px solid var(--line);
