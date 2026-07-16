@@ -6,7 +6,7 @@
 
   let parks = [];
   let activeMarker = null;
-  let markersByName = {};
+  let markersByIdx = {};
   let activeFilter = null;
 
   const FEATURE_LABELS = {
@@ -17,7 +17,7 @@
     quadra: "🏀 Quadra",
     biblioteca: "📚 Biblioteca",
     "ciclovia próxima": "🚴 Ciclovia próxima",
-    acessibilidade: "♿ Acessibilidade"
+    acessibilidade: "♿ Acessibilidade",
   };
 
   // ---------- Clock ----------
@@ -33,13 +33,13 @@
   // ---------- Map ----------
   const map = L.map("map", { zoomControl: true }).setView(
     cfg.map.initialCenter,
-    cfg.map.initialZoom
+    cfg.map.initialZoom,
   );
 
   L.tileLayer(cfg.map.tileUrl, {
     minZoom: cfg.map.minZoom,
     maxZoom: cfg.map.maxZoom,
-    attribution: cfg.map.tileAttribution
+    attribution: cfg.map.tileAttribution,
   }).addTo(map);
 
   function parkIcon(active) {
@@ -50,7 +50,7 @@
                <circle cx="12" cy="10" r="3" fill="#0f1a0d"/>
              </svg>`,
       iconSize: [22, 22],
-      iconAnchor: [11, 20]
+      iconAnchor: [11, 20],
     });
   }
 
@@ -61,7 +61,9 @@
       .map((f) => `<span class="chip">${FEATURE_LABELS[f] || f}</span>`)
       .join("");
     const area = park.area_m2
-      ? (park.area_m2 / 10000).toLocaleString("pt-BR", { maximumFractionDigits: 1 }) + " ha"
+      ? (park.area_m2 / 10000).toLocaleString("pt-BR", {
+          maximumFractionDigits: 1,
+        }) + " ha"
       : "—";
 
     el.innerHTML = `
@@ -85,14 +87,14 @@
     renderDetail(park);
 
     if (activeMarker) activeMarker.setIcon(parkIcon(false));
-    const marker = markersByName[park.name];
+    const marker = markersByIdx[park.idx];
     if (marker) {
       marker.setIcon(parkIcon(true));
       activeMarker = marker;
     }
 
     document.querySelectorAll(".park-list__items li").forEach((li) => {
-      li.classList.toggle("is-active", li.dataset.name === park.name);
+      li.classList.toggle("is-active", Number(li.dataset.idx) === park.idx);
     });
 
     if (pan) map.flyTo([park.lat, park.lng], 15, { duration: 0.8 });
@@ -107,8 +109,10 @@
     });
 
     parks.forEach((park) => {
-      const marker = markersByName[park.name];
-      const li = document.querySelector(`.park-list__items li[data-name="${park.name}"]`);
+      const marker = markersByIdx[park.idx];
+      const li = document.querySelector(
+        `.park-list__items li[data-idx="${park.idx}"]`,
+      );
       const visible = !activeFilter || park.features.includes(activeFilter);
 
       if (marker) {
@@ -135,9 +139,36 @@
   }
 
   // ---------- Load parks ----------
+  function showLoadError(err) {
+    console.error("Falha ao carregar parks.json:", err);
+    const detail = document.getElementById("detail");
+    if (detail) {
+      detail.innerHTML = `
+        <p class="detail__placeholder">
+          ⚠️ Não foi possível carregar os dados dos parques.<br>
+          Verifique se o arquivo <code class="mono">parks.json</code> está acessível
+          (se estiver abrindo o <code class="mono">index.html</code> direto do disco,
+          sirva os arquivos por um servidor local em vez de abrir via <code class="mono">file://</code>).
+        </p>`;
+    }
+    const countEl = document.getElementById("parkCount");
+    if (countEl) countEl.textContent = "[erro]";
+  }
+
   async function loadParks() {
-    const res = await fetch(cfg.data.parks);
-    parks = await res.json();
+    try {
+      const res = await fetch(cfg.data.parks);
+      if (!res.ok)
+        throw new Error(`HTTP ${res.status} ao buscar ${cfg.data.parks}`);
+      parks = await res.json();
+    } catch (err) {
+      showLoadError(err);
+      return;
+    }
+
+    parks.forEach((park, i) => {
+      park.idx = i;
+    });
 
     document.getElementById("parkCount").textContent = `[${parks.length}]`;
 
@@ -149,12 +180,21 @@
         const marker = L.marker([park.lat, park.lng], { icon: parkIcon(false) })
           .addTo(map)
           .on("click", () => selectPark(park, { pan: false }));
-        markersByName[park.name] = marker;
+        markersByIdx[park.idx] = marker;
 
         const li = document.createElement("li");
-        li.dataset.name = park.name;
+        li.dataset.idx = park.idx;
+        li.tabIndex = 0;
+        li.setAttribute("role", "button");
+        li.setAttribute("aria-label", `${park.name}, ${park.region}`);
         li.innerHTML = `<span>${park.name}</span><span class="region">${park.region}</span>`;
         li.addEventListener("click", () => selectPark(park));
+        li.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            selectPark(park);
+          }
+        });
         list.appendChild(li);
       });
 
