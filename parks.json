@@ -168,5 +168,21 @@
       "acessibilidade"
     ],
     "note": "Criado em 1992 e implantado em 1996, preserva uma área de Cerrado e Mata na Regional Nordeste. Possui trilhas para caminhada, mirantes, quadra poliesportiva e infraestrutura acessível para visitantes."
+  },
+  {
+    "name": "Parque Mosteiro Tom Jobim",
+    "region": "Centro-Sul",
+    "address": "Rua Dr. Ismael de Faria, 150 — Luxemburgo",
+    "hours": "Ter a dom, 8h–17h",
+    "area_m2": 15200,
+    "lat": -19.9509,
+    "lng": -43.9544,
+    "features": [
+      "banheiro",
+      "playground",
+      "quadra",
+      "acessibilidade"
+    ],
+    "note": "Criado em 1999 e implantado em 2001, o parque integra a área conhecida como Mata do Mosteiro, com vegetação nativa, árvores como ipês e embaúbas, além de espaços para contemplação, lazer e atividades físicas."
   }
 ]
