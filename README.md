@@ -1,4 +1,4 @@
-# bhgreenmap
+# bh-mapa-verde 
 
 Mapa interativo dos parques públicos de Belo Horizonte — JS puro, Leaflet e um dataset em JSON. Sem framework, sem build, só fetch e render.
 
