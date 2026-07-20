@@ -84,11 +84,11 @@
     "address": "Próximo à Lagoa da Pampulha",
     "hours": "Ter a dom, 8h–17h",
     "area_m2": null,
-    "lat": -19.8620,
+    "lat": -19.862,
     "lng": -43.9696,
     "features": [
       "trilha",
-      "ciclovia próxima",
+      "ciclovia",
       "playground"
     ],
     "note": "Fica junto ao conjunto arquitetônico da Pampulha, tombado pela UNESCO, próximo à orla da lagoa."
@@ -184,5 +184,93 @@
       "acessibilidade"
     ],
     "note": "Criado em 1999 e implantado em 2001, o parque integra a área conhecida como Mata do Mosteiro, com vegetação nativa, árvores como ipês e embaúbas, além de espaços para contemplação, lazer e atividades físicas."
+  },
+  {
+    "name": "Parque da Serra do Curral",
+    "region": "Centro-Sul",
+    "address": "Av. José do Patrocínio Pontes, 1951 (Praça Estado de Israel) — Mangabeiras",
+    "hours": "Consultar horário sazonal (sujeito a alteração por clima)",
+    "area_m2": 400000,
+    "lat": -19.958,
+    "lng": -43.901,
+    "features": [
+      "banheiro",
+      "trilha",
+      "mirante",
+      "acessibilidade"
+    ],
+    "note": "Criado em 1999 e inaugurado em 2012 para proteger a Serra do Curral, patrimônio tombado pelo IPHAN. Tem 10 mirantes ao longo da crista, mas só o mirante 3 é acessível livremente; limite de 700 visitantes/dia e proibido uso de bicicletas."
+  },
+  {
+    "name": "Parque das Nações",
+    "region": "Centro-Sul",
+    "address": "Av. José Maria Alkimim, 889 — Belvedere",
+    "hours": "Acesso permanente (sem cercamento)",
+    "area_m2": 102000,
+    "lat": -19.9727,
+    "lng": -43.928,
+    "features": [
+      "trilha"
+    ],
+    "note": "Criado em 2002 por solicitação da comunidade do entorno. Vegetação de gramíneas, arbustos e pequenos grupos de árvores; integra o cordão de parques da Serra do Curral junto com Mangabeiras, Fort Lauderdale, Mata das Borboletas e JK."
+  },
+  {
+    "name": "Parque Dona Clara",
+    "region": "Pampulha",
+    "address": "Rua Ministro Orozimbo Nonato, 470 — Dona Clara",
+    "hours": "Acesso permanente (sem cercamento)",
+    "area_m2": 30000,
+    "lat": -19.858,
+    "lng": -43.953,
+    "features": [
+      "quadra"
+    ],
+    "note": "Criado e implantado em 1998 como medida de compensação ambiental, próximo aos córregos do Onça e Aeroporto. Oferece campo de futebol e espaços de convivência."
+  },
+  {
+    "name": "Parque Real",
+    "region": "Nordeste",
+    "address": "Rua Três Mil e Setenta e Quatro, 201 — Paulo VI",
+    "hours": "Ter a dom e feriados, 7h–18h",
+    "area_m2": 73000,
+    "lat": -19.813,
+    "lng": -43.887,
+    "features": [
+      "banheiro",
+      "playground",
+      "quadra",
+      "acessibilidade",
+      "mirante"
+    ],
+    "note": "Inaugurado em 2019, é o parque mais recente da regional Nordeste, construído sobre uma antiga pedreira aterrada. Tem mirante a 770m de altitude, pista de skate street e bacia de detenção de água pluvial que ajuda a drenar a região em períodos de chuva."
+  },
+  {
+    "name": "Parque Bandeirante Silva Ortiz (Ecológico do Buritis)",
+    "region": "Oeste",
+    "address": "Rua José Cláudio Rezende, 80 — Estoril",
+    "hours": "Seg a qui, 7h–17h · Sex, 7h–16h · Sáb, dom e feriado, 8h–17h",
+    "area_m2": 9800,
+    "lat": -19.97,
+    "lng": -43.975,
+    "features": [
+      "playground"
+    ],
+    "note": "Implantado em 2002 por compensação ambiental, ao lado do antigo campus da UNA Buritis. Vegetação de Cerrado e Mata Atlântica cobre cerca de 70% da área; conhecido também pelos murais de arte urbana pintados nos muros do parque."
+  },
+  {
+    "name": "Parque Municipal Cerrado",
+    "region": "Norte",
+    "address": "Rua Padre Argemiro Moreira, 12015 — Maria Teresa",
+    "hours": "Acesso permanente (sem cercamento)",
+    "area_m2": 176000,
+    "lat": -19.802,
+    "lng": -43.943,
+    "features": [
+      "banheiro",
+      "quadra",
+      "playground",
+      "acessibilidade"
+    ],
+    "note": "Um dos parques mais novos de BH, criado em 2024 na regional Norte. Conta com guarita, banheiros adaptados para PcDs e quadra poliesportiva."
   }
 ]

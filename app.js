@@ -16,8 +16,9 @@
     playground: "🧒 Playground",
     quadra: "🏀 Quadra",
     biblioteca: "📚 Biblioteca",
-    "ciclovia próxima": "🚴 Ciclovia próxima",
+    ciclovia: "🚴 Ciclovia próxima",
     acessibilidade: "♿ Acessibilidade",
+    mirante: "🔭 Mirante",
   };
 
   // ---------- Clock ----------
@@ -146,7 +147,10 @@
     });
     bar.appendChild(clearBtn);
 
-    const allFeatures = [...new Set(parks.flatMap((p) => p.features))];
+    const allFeatures = [...new Set(parks.flatMap((p) => p.features))].sort(
+      (a, b) =>
+        (FEATURE_LABELS[a] || a).localeCompare(FEATURE_LABELS[b] || b, "pt-BR"),
+    );
     allFeatures.forEach((f) => {
       const btn = document.createElement("button");
       btn.type = "button";
