@@ -6,9 +6,10 @@ const PARKS_CONFIG = {
     minZoom: 11,
     maxZoom: 17,
     tileUrl: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-    tileAttribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    tileAttribution:
+      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
   },
   data: {
-    parks: "parks.json"
-  }
+    parks: "src/data/parks.json",
+  },
 };

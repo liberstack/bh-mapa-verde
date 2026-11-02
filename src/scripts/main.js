@@ -1,12 +1,10 @@
-// app.js — Parques BH
+// main.js — Parques BH (UI, filtros e carregamento de dados)
 (function () {
   "use strict";
 
   const cfg = PARKS_CONFIG;
 
   let parks = [];
-  let activeMarker = null;
-  let markersByIdx = {};
   let activeFilter = null;
 
   const FEATURE_LABELS = {
@@ -30,30 +28,6 @@
   }
   tickClock();
   setInterval(tickClock, 1000);
-
-  // ---------- Map ----------
-  const map = L.map("map", { zoomControl: true }).setView(
-    cfg.map.initialCenter,
-    cfg.map.initialZoom,
-  );
-
-  L.tileLayer(cfg.map.tileUrl, {
-    minZoom: cfg.map.minZoom,
-    maxZoom: cfg.map.maxZoom,
-    attribution: cfg.map.tileAttribution,
-  }).addTo(map);
-
-  function parkIcon(active) {
-    return L.divIcon({
-      className: "",
-      html: `<svg class="park-marker${active ? " is-active" : ""}" width="22" height="22" viewBox="0 0 24 24">
-               <path d="M12 2 C7 2 4 6 4 10 C4 15 12 22 12 22 C12 22 20 15 20 10 C20 6 17 2 12 2 Z" fill="currentColor" stroke="#0f1a0d" stroke-width="1"/>
-               <circle cx="12" cy="10" r="3" fill="#0f1a0d"/>
-             </svg>`,
-      iconSize: [22, 22],
-      iconAnchor: [11, 20],
-    });
-  }
 
   // ---------- Detail panel ----------
   function renderDetail(park) {
@@ -86,19 +60,13 @@
 
   function selectPark(park, { pan } = { pan: true }) {
     renderDetail(park);
-
-    if (activeMarker) activeMarker.setIcon(parkIcon(false));
-    const marker = markersByIdx[park.idx];
-    if (marker) {
-      marker.setIcon(parkIcon(true));
-      activeMarker = marker;
-    }
+    ParksMap.setActive(park.idx);
 
     document.querySelectorAll(".park-list__items li").forEach((li) => {
       li.classList.toggle("is-active", Number(li.dataset.idx) === park.idx);
     });
 
-    if (pan) map.flyTo([park.lat, park.lng], 15, { duration: 0.8 });
+    if (pan) ParksMap.flyTo(park);
   }
 
   // ---------- Filter ----------
@@ -117,19 +85,12 @@
     if (clearBtn) clearBtn.hidden = !activeFilter;
 
     parks.forEach((park) => {
-      const marker = markersByIdx[park.idx];
       const li = document.querySelector(
         `.park-list__items li[data-idx="${park.idx}"]`,
       );
       const visible = !activeFilter || park.features.includes(activeFilter);
 
-      if (marker) {
-        if (visible) {
-          if (!map.hasLayer(marker)) marker.addTo(map);
-        } else if (map.hasLayer(marker)) {
-          map.removeLayer(marker);
-        }
-      }
+      ParksMap.setVisible(park.idx, visible);
       if (li) li.style.display = visible ? "" : "none";
     });
   }
@@ -201,10 +162,7 @@
       .slice()
       .sort((a, b) => a.name.localeCompare(b.name, "pt-BR"))
       .forEach((park) => {
-        const marker = L.marker([park.lat, park.lng], { icon: parkIcon(false) })
-          .addTo(map)
-          .on("click", () => selectPark(park, { pan: false }));
-        markersByIdx[park.idx] = marker;
+        ParksMap.addMarker(park, () => selectPark(park, { pan: false }));
 
         const li = document.createElement("li");
         li.dataset.idx = park.idx;
